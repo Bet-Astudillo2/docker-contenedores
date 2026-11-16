@@ -21,7 +21,8 @@ services:
 
   # Contenedor 2: base de datos PostgreSQL (rol distinto: persistencia)
   db:
-    image: postgres:16-alpine
+    build: ./db
+    image: proyecto1-db:1.0
     container_name: proyecto1_db
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
