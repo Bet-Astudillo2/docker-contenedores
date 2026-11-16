@@ -101,4 +101,9 @@ docker compose down -v     # detener y borrar datos
 - `healthcheck` + `depends_on` para que la API espere a que la BD esté lista.
 - Red propia (`red_proyecto`) y comunicación por nombre de servicio.
 - CI: GitHub Actions construye las imágenes en cada push y pull request.
+## Integración continua con Jenkins
+
+El pipeline `Entrega2-Docker-CI` consulta la rama `entrega2-jenkins`
+mediante Poll SCM. Al detectar un cambio, construye las imágenes de
+Flask y PostgreSQL y prueba que la API pueda guardar y recuperar una nota.
 
